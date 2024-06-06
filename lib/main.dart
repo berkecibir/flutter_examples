@@ -1,8 +1,11 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/demos/color_demos_view.dart';
 import 'package:flutter_application_1/indicator_learn.dart';
+import 'package:flutter_application_1/page_view_learn.dart';
 import 'package:flutter_application_1/stateful_learn.dart';
+import 'package:flutter_application_1/stateful_life_cycle.dart';
 
 import 'column_row_learn.dart';
 import 'custom_widget_learn.dart';
@@ -32,7 +35,9 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const StatefulLearnView(),
+      home: const StatefulLifeCycle(
+        message: 'Flutter Learning',
+      ),
     );
   }
 }

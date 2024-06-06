@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/product/counter_merhaba_button.dart';
+import 'package:flutter_application_1/product/language/language_items.dart';
 
 class StatefulLearnView extends StatefulWidget {
   const StatefulLearnView({super.key});
@@ -12,6 +14,9 @@ class _StatefulLearnViewState extends State<StatefulLearnView> {
 //asıl işlemleri gösteren yerdir
 
   int _countValue = 0;
+
+  int _counterCustom = 0;
+
   void _updateCounter(bool isIncrement) {
     if (isIncrement) {
       _countValue = _countValue + 1;
@@ -24,7 +29,10 @@ class _StatefulLearnViewState extends State<StatefulLearnView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text(LanguageItems.welcomeTitle),
+        centerTitle: true,
+      ),
       floatingActionButton: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -32,15 +40,22 @@ class _StatefulLearnViewState extends State<StatefulLearnView> {
           _deincrementButton(),
         ],
       ),
-      body: Center(
-          child: Text(
-        _countValue.toString(),
-        style: Theme.of(context).textTheme.headlineMedium,
-      )),
+      body: Column(
+        children: [
+          Center(
+              child: Text(
+            _countValue.toString(),
+            style: Theme.of(context).textTheme.headlineMedium,
+          )),
+          const Placeholder(),
+          const CounterMerhabaButton(),
+        ],
+      ),
     );
   }
 
   FloatingActionButton _incrementButton() {
+    print('Burada');
     return FloatingActionButton(
       onPressed: () {
         _updateCounter(true);
