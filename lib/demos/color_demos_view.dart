@@ -5,13 +5,30 @@
 import 'package:flutter/material.dart';
 
 class ColorDemosLearn extends StatefulWidget {
-  const ColorDemosLearn({super.key});
+  const ColorDemosLearn({super.key, required this.initialColor});
+  final Color? initialColor;
 
   @override
   State<ColorDemosLearn> createState() => _ColorDemosLearnState();
 }
 
 class _ColorDemosLearnState extends State<ColorDemosLearn> {
+  @override
+  void initState() {
+    super.initState();
+    _backgroundColor = widget.initialColor ?? Colors.transparent;
+  }
+
+  @override
+  void didUpdateWidget(covariant ColorDemosLearn oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    if (oldWidget.initialColor != _backgroundColor &&
+        widget.initialColor != null) {
+      changeBackgroundColor(widget.initialColor!);
+    }
+  }
+
   Color? _backgroundColor = Colors.transparent;
   void changeBackgroundColor(Color color) {
     setState(() {
