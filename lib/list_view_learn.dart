@@ -13,6 +13,7 @@ class _ListViewLearnState extends State<ListViewLearn> {
     return Scaffold(
       appBar: AppBar(),
       body: ListView(
+        padding: EdgeInsets.zero,
         children: [
           FittedBox(
             child: Text(
@@ -23,10 +24,73 @@ class _ListViewLearnState extends State<ListViewLearn> {
           ),
           Container(color: Colors.red, height: 300),
           const Divider(),
-          Container(color: Colors.green, height: 300),
+          SizedBox(
+            height: 300,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                Container(color: Colors.green, width: 100),
+                Container(color: Colors.white, width: 100),
+                Container(color: Colors.green, width: 100),
+                Container(color: Colors.white, width: 100),
+                Container(color: Colors.green, width: 100),
+              ],
+            ),
+          ),
           IconButton(onPressed: () {}, icon: const Icon(Icons.close)),
+          //XX
+          FittedBox(
+            child: Text(
+              'Merhaba',
+              style: Theme.of(context).textTheme.headlineLarge,
+              maxLines: 1,
+            ),
+          ),
+          Container(color: Colors.red, height: 300),
+          const Divider(),
+          SizedBox(
+            height: 300,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              children: [
+                Container(color: Colors.green, width: 100),
+                Container(color: Colors.white, width: 100),
+                Container(color: Colors.green, width: 100),
+                Container(color: Colors.white, width: 100),
+                Container(color: Colors.green, width: 100),
+              ],
+            ),
+          ),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.close)),
+          const _ListDemo(),
         ],
       ),
     );
+  }
+}
+
+class _ListDemo extends StatefulWidget {
+  const _ListDemo({super.key});
+
+  @override
+  State<_ListDemo> createState() => __ListDemoState();
+}
+
+class __ListDemoState extends State<_ListDemo> {
+  @override
+  void initState() {
+    super.initState();
+    print('Burada');
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    print('exit');
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }

@@ -4,7 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/demos/color_demos_view.dart';
 import 'package:flutter_application_1/demos/color_life_cycle_view.dart';
 import 'package:flutter_application_1/indicator_learn.dart';
+import 'package:flutter_application_1/list_view_builder.dart';
 import 'package:flutter_application_1/list_view_learn.dart';
+import 'package:flutter_application_1/my_collections.dart';
+import 'package:flutter_application_1/navigation_learn.dart';
 import 'package:flutter_application_1/page_view_learn.dart';
 import 'package:flutter_application_1/stateful_learn.dart';
 import 'package:flutter_application_1/stateful_life_cycle.dart';
@@ -38,7 +41,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const ListViewLearn(),
+      home: const NavigationLearn(),
     );
   }
 }
